@@ -5,9 +5,9 @@ import datetime
 import json
 
 latitude = 37.6485
-longitude = 118.9721
-units = 'imperial'
-api_key = '' # Insert your OpenWeatherMap API key here
+longitude = -118.9721
+units = "imperial"
+api_key = "" # Insert your OpenWeatherMap API key here
 
 ICON_MAP = {
     "01d": "", "01n": "", "02d": "", "02n": "",
@@ -18,10 +18,10 @@ ICON_MAP = {
 }
 
 def unix_to_date(unix):
-    return datetime.datetime.fromtimestamp(unix).strftime('%m/%d/%Y')
+    return datetime.datetime.fromtimestamp(unix).strftime("%m/%d/%Y")
 
 def unix_to_time(unix):
-    return datetime.datetime.fromtimestamp(unix).strftime('%I:%M %p')
+    return datetime.datetime.fromtimestamp(unix).strftime("%I:%M %p")
 
 def get_icon(icon):
     return ICON_MAP.get(icon, "?")
