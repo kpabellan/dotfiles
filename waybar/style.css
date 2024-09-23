@@ -1,0 +1,124 @@
+@import "mocha.css";
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 15px;
+    min-height: 0;
+}
+
+#waybar {
+    background: @transparent;
+    color: @text;
+    margin: 5px 5px;
+}
+
+#custom-arch {
+    background-color: @base;
+    border-radius: 10px;
+    color: #1793D1;
+    font-size: 25px;
+    margin: 5px 10px;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    transition: none;
+}
+
+#custom-arch:hover {
+    background-color: @text;
+}
+
+#workspaces {
+    background-color: @base;
+    border-radius: 10px;
+    margin: 5px 0px;
+    padding: 0.5rem 1rem;
+}
+
+#workspaces button {
+    border-radius: 10px;
+    color: @lavender;
+    padding: 0 0 0 5px;
+}
+
+#workspaces button.active {
+    border-radius: 10px;
+    color: @yellow;
+}
+
+#workspaces button:hover {
+    background: none;
+    border-color: transparent;
+    border-radius: 10px;
+    box-shadow: none;
+    color: @yellow;
+}
+
+#custom-music {
+    background-color: @base;
+    border-radius: 10px;
+    color: @mauve;
+    margin: 5px 10px;
+    padding: 0.5rem 1rem;
+}
+
+#backlight {
+    background-color: @base;
+    color: @yellow;
+    margin: 5px 0px;
+    padding: 0.5rem 1rem;
+}
+
+#battery {
+    background-color: @base;
+    color: @green;
+    margin: 5px 0px;
+    padding: 0.5rem 1rem;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#pulseaudio {
+    background-color: @base;
+    border-radius: 10px 0px 0px 10px;
+    color: @maroon;
+    margin: 5px 0px;
+    padding: 0.5rem 1rem;
+}
+
+#bluetooth {
+    background-color: @base;
+    color: @peach;
+    font-size: 20px;
+    margin: 5px 0px;
+    padding: 0.5rem 1rem;
+}
+
+#network {
+    background-color: @base;
+    border-radius: 0px 10px 10px 0px;
+    color: @sky;
+    font-size: 20px;
+    margin: 5px 0px;
+    padding: 0.5rem 1rem;
+}
+
+#custom-weather {
+    background-color: @base;
+    border-radius: 10px;
+    color: @subtext0;
+    margin: 5px 0px 5px 10px;
+    padding: 0.5rem 1rem;
+}
+
+#clock {
+    background-color: @base;
+    border-radius: 10px;
+    color: @blue;
+    margin: 5px 10px;
+    padding: 0.5rem 1rem;
+}

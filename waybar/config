@@ -1,0 +1,118 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "bluetooth", "network", "custom/weather", "clock"],
+    "margin-top": 5,
+    "margin-left": 20,
+    "margin-right": 20,
+    "custom/arch": {
+        "format": " ",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "sort-by-name": true,
+        "format": " {icon} ",
+        "format-icons": {
+            "default": " ",
+            "active": " "
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 1,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "max-length": 50,
+        "on-click": "playerctl previous",
+        "on-click-middle": "playerctl play-pause",
+        "on-click-right": "playerctl next"
+    },
+    "network": {
+        "interval": 1,
+        "interface": "wlp3s0",
+        "format": "󰖩 ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-ethernet": "  ",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "No connection",
+        "tooltip": true,
+        "on-click": "kitty nmtui"
+    },
+    "bluetooth": {
+        "format": "{icon}",
+        "format-connected": "",
+        "tooltip-format-connected": "{device} (Connected)",
+        "format-on": "󰂯",
+        "tooltip-format-on": "Bluetooth On",
+        "format-off": "󰂲",
+        "tooltip-format-off": "Bluetooth Off",
+        "tooltip": true,
+        "on-click": "bluetoothctl power on",
+        "on-click-middle": "kitty bluetoothctl",
+        "on-click-right": "bluetoothctl power off"
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 1,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "max-length": 50,
+        "on-click": "playerctl previous",
+        "on-click-middle": "playerctl play-pause",
+        "on-click-right": "playerctl next"
+    },
+    "clock": {
+        "timezone": "America/Los_Angeles",
+        "tooltip-format": "<big>{:%a, %b %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "  {:%m/%d/%Y}",
+        "format": "  {:%I:%M %p}"
+    },
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": false
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.py",
+        "return-type": "json",
+        "interval": 600,
+        "tooltip": true,
+        "on-click": "xdg-open https://www.google.com/search?q=weather"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
+    }
+}
