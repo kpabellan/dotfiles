@@ -27,57 +27,25 @@
         }
     },
     "custom/music": {
-        "format": "  {}",
+        "format": "{}",
         "escape": true,
         "interval": 1,
         "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
+        "exec": "~/.config/scripts/show_audio.sh",
         "max-length": 50,
         "on-click": "playerctl previous",
         "on-click-middle": "playerctl play-pause",
         "on-click-right": "playerctl next"
     },
-    "network": {
-        "interval": 1,
-        "interface": "wlp3s0",
-        "format": "󰖩 ",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "format-ethernet": "  ",
-        "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "󰖪 ",
-        "tooltip-format-disconnected": "No connection",
-        "tooltip": true,
-        "on-click": "kitty nmtui"
-    },
-    "bluetooth": {
-        "format": "{icon}",
-        "format-connected": "",
-        "tooltip-format-connected": "{device} (Connected)",
-        "format-on": "󰂯",
-        "tooltip-format-on": "Bluetooth On",
-        "format-off": "󰂲",
-        "tooltip-format-off": "Bluetooth Off",
-        "tooltip": true,
-        "on-click": "bluetoothctl power on",
-        "on-click-middle": "kitty bluetoothctl",
-        "on-click-right": "bluetoothctl power off"
-    },
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 1,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "max-length": 50,
-        "on-click": "playerctl previous",
-        "on-click-middle": "playerctl play-pause",
-        "on-click-right": "playerctl next"
-    },
-    "clock": {
-        "timezone": "America/Los_Angeles",
-        "tooltip-format": "<big>{:%a, %b %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "  {:%m/%d/%Y}",
-        "format": "  {:%I:%M %p}"
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": false
     },
     "backlight": {
         "device": "amdgpu_bl1",
@@ -98,6 +66,31 @@
         "format-icons": ["", "", "", "", ""],
         "max-length": 25
     },
+    "bluetooth": {
+        "format": "{icon}",
+        "format-connected": "",
+        "tooltip-format-connected": "Bluetooth connected",
+        "format-on": "󰂯",
+        "tooltip-format-on": "Bluetooth on",
+        "format-off": "󰂲",
+        "tooltip-format-off": "Bluetooth off",
+        "tooltip": true,
+        "on-click": "bluetoothctl power on",
+        "on-click-middle": "blueman-manager",
+        "on-click-right": "bluetoothctl power off"
+    },
+    "network": {
+        "interval": 1,
+        "interface": "wlp3s0",
+        "format": "󰖩 ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-ethernet": "  ",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "No connection",
+        "tooltip": true,
+        "on-click": "kitty nmtui"
+    },
     "custom/weather": {
         "exec": "~/.config/waybar/scripts/weather.py",
         "return-type": "json",
@@ -105,14 +98,10 @@
         "tooltip": true,
         "on-click": "xdg-open https://www.google.com/search?q=weather"
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol",
-        "tooltip": false
+    "clock": {
+        "timezone": "America/Los_Angeles",
+        "tooltip-format": "<big>{:%a, %b %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "  {:%m/%d/%Y}",
+        "format": "  {:%I:%M %p}"
     }
 }
