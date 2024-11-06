@@ -83,7 +83,7 @@
     color: @red;
 }
 
-#pulseaudio {
+#wireplumber {
     background-color: @base;
     border-radius: 10px 0px 0px 10px;
     color: @maroon;

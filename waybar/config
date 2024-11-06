@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/arch", "hyprland/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "bluetooth", "network", "custom/weather", "clock"],
+    "modules-right": ["wireplumber", "backlight", "battery", "bluetooth", "network", "custom/weather", "clock"],
     "margin-top": 5,
     "margin-left": 20,
     "margin-right": 20,
@@ -37,14 +37,13 @@
         "on-click-middle": "playerctl play-pause",
         "on-click-right": "playerctl next"
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
+    "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", " "]
         },
-        "on-click": "pavucontrol",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "tooltip": false
     },
     "backlight": {
