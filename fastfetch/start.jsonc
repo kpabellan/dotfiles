@@ -3,19 +3,24 @@
     "logo": {
         "source": "~/.config/fastfetch/arch.txt",
         "padding": {
-            "top": 1,
-            "left": 1
+            "left": 1,
+            "right": 2
         }
     },
     "display": {
         "separator": " ➜  "
     },
     "modules": [
-        "break",
+        {
+            "type": "title",
+            "key": " ",
+            "format": "{6}{7}{8}"
+        },
         {
             "type": "os",
             "key": "OS",
-            "keyColor": "31"
+            "keyColor": "31",
+            "format": "{2} {8}"
         },
         {
             "type": "kernel",
@@ -23,33 +28,22 @@
             "keyColor": "32"
         },
         {
-            "type": "host",
-            "format": "{5} {1}",
-            "key": "PC",
-            "keyColor": "33"
-        },
-        {
             "type": "cpu",
             "format": "{1}",
             "key": " ",
-            "keyColor": "34"
-        },
-        {
-            "type": "gpu",
-            "format": "{1} {2}",
-            "key": "󰢮 ",
-            "keyColor": "35"
-        },
-        {
-            "type": "memory",
-            "format": "{total}",
-            "key": " ",
-            "keyColor": "36"
+            "keyColor": "33"
         },
         {
             "type": "disk",
+            "format": "{2}",
             "key": "󰋊 ",
-            "keyColor": "91"
+            "keyColor": "34"
+        },
+        {
+            "type": "memory",
+            "format": "{2}",
+            "key": " ",
+            "keyColor": "35"
         }
     ]
 }
