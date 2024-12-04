@@ -101,6 +101,6 @@
         "timezone": "America/Los_Angeles",
         "tooltip-format": "<big>{:%a, %b %d}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "  {:%m/%d/%Y}",
-        "format": "  {:%I:%M %p}"
+        "format": "  {:%H:%M}"
     }
 }
