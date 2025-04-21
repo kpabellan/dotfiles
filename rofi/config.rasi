@@ -1,4 +1,6 @@
-configuration{
+@theme "~/.config/rofi/wallpaper-theme.rasi"
+
+configuration {
     modi: "drun";
     icon-theme: "Oranchelo";
     show-icons: true;
@@ -13,5 +15,3 @@ configuration{
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
 }
-
-@theme "catppuccin-mocha"

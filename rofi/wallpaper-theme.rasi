@@ -1,0 +1,128 @@
+* {
+    background: #070707;
+    background-color: @background;
+    foreground: #c1c1c1;
+    border-color: @background;
+
+    active-background: #ACACAC;
+    active-foreground: @foreground;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: #909090;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: #909090;
+    selected-active-foreground: @foreground;
+    selected-normal-background: #ACACAC;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: #B8B8B8;
+    selected-urgent-foreground: @foreground;
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+window {
+    height: 360px;
+    border: 3px;
+    border-color: @border-color;
+    background-color: @background-color;
+}
+
+mainbox {
+    background-color: @background-color;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @background-color;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @active-background;
+    padding: 6px;
+    text-color: @background-color;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @foreground;
+    background-color: @background-color;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 5;
+    background-color: @background-color;
+}
+
+element {
+    padding: 5px;
+    background-color: @background-color;
+    text-color: @foreground;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @background-color;
+    text-color: @foreground;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @background-color;
+    text-color: @active-background;
+}
+
+message {
+    background-color: @background-color;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @active-background;
+    background-color: @background-color;
+}
