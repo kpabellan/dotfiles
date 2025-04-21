@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["custom/arch", "hyprland/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": ["wireplumber", "backlight", "battery", "bluetooth", "network", "custom/weather", "clock"],
+    "modules-right": ["wireplumber", "backlight", "battery", "bluetooth", "custom/network", "custom/weather", "clock"],
     "margin-top": 5,
     "margin-left": 20,
     "margin-right": 20,
@@ -78,17 +78,14 @@
         "on-click-middle": "blueman-manager",
         "on-click-right": "bluetoothctl power off"
     },
-    "network": {
-        "interval": 1,
-        "interface": "wlp3s0",
-        "format": "󰖩 ",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "format-ethernet": "  ",
-        "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "󰖪 ",
-        "tooltip-format-disconnected": "No connection",
-        "tooltip": true,
-        "on-click": "kitty nmtui"
+    "custom/network": {
+    "exec": "~/.config/waybar/scripts/network.py",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "kitty nmtui",
+    "on-click-middle": "mullvad-vpn",
+    "on-click-right": "python ~/.config/waybar/scripts/wifi_toggle.py"
     },
     "custom/weather": {
         "exec": "~/.config/waybar/scripts/weather.py",
