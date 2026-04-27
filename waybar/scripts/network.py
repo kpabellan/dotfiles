@@ -108,7 +108,6 @@ def get_network_status():
                         "tooltip": f"Ethernet: {connection}\n{vpn_status}",
                         "class": "connected",
                     }
-
         return {
             "text": "󰖪 ",
             "tooltip": "No connection\nVPN: Not connected",
