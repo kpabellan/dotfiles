@@ -20,7 +20,6 @@ def get_wifi_signal_strength():
         pass
     return None
 
-
 def get_vpn_status():
     vpns = []
 
@@ -67,7 +66,6 @@ def get_vpn_status():
         return "\n".join(vpns)
     else:
         return "VPN: Not connected"
-
 
 def get_network_status():
     try:
@@ -122,7 +120,6 @@ def get_network_status():
             "tooltip": "Error checking network",
             "class": "disconnected",
         }
-
 
 if __name__ == "__main__":
     network_status = get_network_status()
