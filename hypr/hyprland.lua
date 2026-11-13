@@ -312,7 +312,16 @@ hl.window_rule({
 })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-hl.workspace_rule({ workspace = 2, on_created_empty = "firefox" })
-hl.workspace_rule({ workspace = 3, on_created_empty = "code" })
-hl.workspace_rule({ workspace = 4, on_created_empty = "webcord" })
-hl.workspace_rule({ workspace = 5, on_created_empty = "spotify" })
+local on_created_empty = {
+    [2] = "firefox",
+    [3] = "code",
+    [4] = "webcord",
+    [5] = "spotify",
+}
+
+hl.on("workspace.created", function(ws)
+    local cmd = ws and ws.id and on_created_empty[ws.id]
+    if cmd and ws.is_empty then
+        hl.exec_cmd(cmd, { workspace = tostring(ws.id) })
+    end
+end)
